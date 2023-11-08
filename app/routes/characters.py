@@ -46,16 +46,17 @@ def get_character(character_id: int, db: Session = Depends(get_db)):
 
 
 @router.post('/characters')
-async def create_character(page=1) -> JSONResponse:
+async def create_character(page=1, db: Session = Depends(get_db)) -> JSONResponse:
     """
-        The create_character function creates a new character in the database.
+        The create_character function creates a new characters in the database
+        getting data from external service (Rick and morty API).
 
         :param page: Determine which page of results to retrieve from external api
         :return: A JSONResponse with a status code of 201 if successful
     """
     characters = await get_characters(page=page)
 
-    amount = bulk_create_characters(characters)
+    amount = bulk_create_characters(characters, db)
 
     return JSONResponse(
         content=f'{amount} new characters were created',
