@@ -11,8 +11,8 @@ from app.routes import characters
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    yield
     Base.metadata.create_all(bind=engine)
+    yield
 
 
 app = FastAPI(
