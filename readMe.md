@@ -1,6 +1,10 @@
 # FastAPI Conección a Rick and morty API para manejar datos externos
 
-Esta API está desarrollada utilizando FastAPI para manejar datos provenientes de un servicio externo y almacenarlos en una base de datos MySQL.
+Esta API está desarrollada utilizando FastAPI para manejar datos provenientes de un servicio externo
+(Rick and Morty API) y almacenarlos en una base de datos MySQL.
+
+Los datos se optienen y se crean varios a la vez, desde el servicio externo o se
+optienen uno a uno desde la base de datos local
 
 ## Requisitos
 
