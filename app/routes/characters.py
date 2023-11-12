@@ -13,7 +13,6 @@ router = APIRouter(tags=['characters'])
 
 @router.get('/characters', response_model=list[Character])
 async def get_characters_from_service(page=1):
-
     """
         The get_characters_from_service function is a coroutine that gets characters from the Rick and Morty API.
         It takes in an optional page parameter, which defaults to 1 if not provided.
@@ -51,7 +50,8 @@ async def create_character(page=1, db: Session = Depends(get_db)) -> JSONRespons
         The create_character function creates a new characters in the database
         getting data from external service (Rick and morty API).
 
-        :param page: Determine which page of results to retrieve from external api
+        :param page: Determine which page of results to retrieve from external api.
+        :param db: Session: database session dependency.
         :return: A JSONResponse with a status code of 201 if successful
     """
     characters = await get_characters(page=page)

@@ -7,7 +7,7 @@ from app.schemas.location import Location
 
 
 class Status(Enum):
-    """Posible status of a character"""
+    """ Possible status of a character """
 
     ALIVE = "Alive"
     DEAD = "Dead"
@@ -15,7 +15,7 @@ class Status(Enum):
 
 
 class Gender(Enum):
-    """All gender known in Rick and Morty serie"""
+    """ All gender known in Rick and Morty series """
 
     FEMALE = "Female"
     MALE = "Male"
@@ -24,7 +24,7 @@ class Gender(Enum):
 
 
 class Character(BaseModel):
-    """ Representation of a character in the Rick and Morty serie """
+    """ Representation of a character in the Rick and Morty series """
     name: str = Field(default="Rick Sanchez", max_length=255)
     status: Status = Field(default=Status.ALIVE)
     species: str = Field(default="Human", max_length=100)
@@ -36,4 +36,3 @@ class Character(BaseModel):
     origin: Location
     location: Location
     created: datetime
-

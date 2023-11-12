@@ -1,9 +1,10 @@
-fastapi
+fastapi~=0.104.1
 uvicorn[standard]
-httpx
-sqlalchemy
+httpx~=0.25.1
+sqlalchemy~=2.0.23
 pymysql
-python-dotenv
-alembic
+python-dotenv~=1.0.0
+alembic~=1.12.1
 cryptography
 pytest
+pydantic~=2.4.2
